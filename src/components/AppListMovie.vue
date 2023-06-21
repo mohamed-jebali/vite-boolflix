@@ -9,14 +9,17 @@
 <script>
 import AppMovie from './AppMovie.vue';
 export default {
+    data() {
+    return {
+    }
+},
     components:{
-     AppMovie,
-    },
-        
+             AppMovie,
+    },    
     name: 'AppListMovie',
     props : {
         listMovie : Array
-    }
+    },
 }
 </script>
 <style lang="scss" scoped>

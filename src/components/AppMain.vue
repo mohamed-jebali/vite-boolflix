@@ -26,7 +26,7 @@ export default {
     AppListMovie,
   },
     methods: {
-        filteredMovie(filter){
+        getMovies(filter){
             axios.get(this.apiUrl, {
                 params: {
                     movie: filter
@@ -40,9 +40,6 @@ export default {
             })
         }    
     },
-    created(){
-        this.filteredMovie();
-    }
 }
 </script>
 <style lang="scss" scoped>

@@ -4,7 +4,7 @@
        :titleMovie="item.title"
        :titleOriginal="item.original_title"
        :language="item.original_language"
-       :rank="vote_average"
+       :rank="item.vote_average"
        />
     </div>
 </template>

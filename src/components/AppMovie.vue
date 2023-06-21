@@ -10,7 +10,7 @@
             {{ language }}
         </p>
         <p>
-            {{ rank }}
+            {{ rank.toFixed(1) }}
         </p>
     </div>
 </template>
@@ -22,7 +22,7 @@ export default {
         titleMovie : String,
         titleOriginal : String,
         language : String,
-        rank : String,
+        rank : Number,
     }
 }
 </script>

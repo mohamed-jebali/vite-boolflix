@@ -35,6 +35,8 @@ export default {
             })
             .then( (response) => {
             this.listMovie = response.results;
+            console.log(this.listMovie);
+
             })
             .catch(function (error) {
             console.log(error);

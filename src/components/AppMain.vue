@@ -30,11 +30,11 @@ export default {
             axios.get(this.apiUrl, {
                 params: {
                     query: film,
-                    api_Key: "aa2c63995be04027118ba87fe065cf4e"
+                    api_key: "aa2c63995be04027118ba87fe065cf4e"
                 }
             })
             .then( (response) => {
-            this.listMovie = response.results;
+            this.listMovie = response.data.results;
             console.log(this.listMovie);
 
             })
@@ -42,10 +42,10 @@ export default {
             console.log(error);
             })
         },
-        created() {
+    },
+    created() {
           this.getMovies()
         },    
-    },
 }
 </script>
 <style lang="scss" scoped>

@@ -3,8 +3,8 @@
     <h3>
       Main
     </h3>
-    <AppSearchBar/>
-    <AppListMovie/>
+    <AppSearchBar @getMovies="getMovies"/>
+    <AppListMovie :list-movie="listMovie"/>
   </div>
 </template>
 <script>

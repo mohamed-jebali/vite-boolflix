@@ -4,12 +4,14 @@
       Main
     </h3>
     <AppSearchBar/>
+    <AppListMovie/>
   </div>
 </template>
 <script>
 import { store } from '../store.js';
 import axios from 'axios';
 import AppSearchBar from './AppSearchBar.vue';
+import AppListMovie from './AppListMovie.vue';
 export default {
   data() {
     return {
@@ -20,7 +22,8 @@ export default {
   },
   name: "AppMain",
   components:{
-    AppSearchBar
+    AppSearchBar,
+    AppListMovie,
   },
     methods: {
         filteredMovie(filter){

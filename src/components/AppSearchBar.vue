@@ -14,8 +14,9 @@ export default {
 
   data() {
     return {
-      apiUrl:'https://api.themoviedb.org/3/search/movie?api_key=aa2c63995be04027118ba87fe065cf4e',
+      apiUrl:'',
       filteredMovie:[],
+      searchedText : ''
     }
   },
   methods: {

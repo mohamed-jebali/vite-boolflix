@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       store,
-      apiUrl:'https://api.themoviedb.org/3/search/movie?api_key=aa2c63995be04027118ba87fe065cf4e',
+      apiUrl:'https://api.themoviedb.org/3/search/movie',
       listMovie:[],
     }
   },
@@ -26,14 +26,15 @@ export default {
     AppListMovie,
   },
     methods: {
-        getMovies(filter){
+        getMovies(film){
             axios.get(this.apiUrl, {
                 params: {
-                    movie: filter
+                    query: film,
+                    api_Key: "aa2c63995be04027118ba87fe065cf4e"
                 }
             })
             .then( (response) => {
-            this.listMovie = response.data.data;
+            this.listMovie = response.results;
             })
             .catch(function (error) {
             console.log(error);

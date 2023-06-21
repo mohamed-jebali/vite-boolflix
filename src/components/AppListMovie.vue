@@ -1,9 +1,11 @@
 <template>
    <div>
-    <h3>
-        List Movie
-    </h3>
-       <AppMovie/>
+       <AppMovie v-for="item in listMovie"
+       :titleMovie="item.title"
+       :titleOriginal="item.original_title"
+       :language="item.original_language"
+       :rank="vote_average"
+       />
     </div>
 </template>
 <script>

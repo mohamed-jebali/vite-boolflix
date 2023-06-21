@@ -1,14 +1,28 @@
 <template>
-    <h5>
-       Movie
-    </h5>
+    <div>
+        <h3>
+            {{ titleMovie }}
+        </h3>
+        <h4>
+            {{ titleOriginal }}
+        </h4>
+        <p>
+            {{ language }}
+        </p>
+        <p>
+            {{ rank }}
+        </p>
+    </div>
 </template>
 <script>
 
 export default {
     name: 'AppMovie',
-    props : {
-        listMovie : Array
+    props:{
+        titleMovie : String,
+        titleOriginal : String,
+        language : String,
+        rank : String,
     }
 }
 </script>

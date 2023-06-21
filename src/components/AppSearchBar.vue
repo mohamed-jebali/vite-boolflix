@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <form class="d-flex" role="search">
       <input class="me-2" type="search" placeholder="Search" aria-label="Search" v-model="searchedText">
-      <button class="btn btn-outline-success" type="button" @keyup.enter="$emit('getMovies', searchedText)">Search</button>
+      <button class="btn btn-outline-success" type="button" @click="$emit('getMovies', searchedText)">Search</button>
     </form>
   </div>
 </nav>

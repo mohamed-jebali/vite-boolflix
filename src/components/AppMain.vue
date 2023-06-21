@@ -1,13 +1,15 @@
 <template>
-  <div>
+  <div class="main">
     <h3>
       Main
     </h3>
+    <AppSearchBar/>
   </div>
 </template>
 <script>
 import { store } from '../store.js';
 import axios from 'axios';
+import AppSearchBar from './AppSearchBar.vue';
 export default {
   data() {
     return {
@@ -15,6 +17,10 @@ export default {
       apiUrl:'https://api.themoviedb.org/3/search/movie?api_key=aa2c63995be04027118ba87fe065cf4e',
       listMovie:[],
     }
+  },
+  name: "AppMain",
+  components:{
+    AppSearchBar
   },
     methods: {
         filteredMovie(filter){
@@ -37,5 +43,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  
+  .main{
+    border: 1px solid black;
+  }
 </style>

@@ -6,12 +6,12 @@
         <h4>
             {{ titleOriginal }}
         </h4>
-        <div v-if="flagsImgList.includes(language)">
+        <div v-if="flagsImgList.includes(language + '.svg')">
             <img :src="getImageLanguage(language)" alt="country flag">
         </div>
             <div v-else>
                 {{ language }}
-            </div>
+        </div>
         <p>
             {{ rank.toFixed(1) }}
         </p>

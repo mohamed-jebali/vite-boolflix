@@ -1,10 +1,10 @@
 <template>
    <div>
-       <AppMovie v-for="item in listMovie"
-       :titleMovie="item.title"
-       :titleOriginal="item.original_title"
-       :language="item.original_language"
-       :rank="item.vote_average"
+       <AppMovie v-for="itemMovie in listMovie"
+       :titleMovie="itemMovie.title"
+       :titleOriginal="itemMovie.original_title"
+       :language="itemMovie.original_language"
+       :rank="itemMovie.vote_average"
        />
     </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     },    
     name: 'AppListMovie',
     props : {
-        listMovie : Array
+        listMovie : Array,
     },
 }
 </script>

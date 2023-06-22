@@ -3,8 +3,8 @@
     <h3>
       Main
     </h3>
-    <AppSearchBar @getMovies="getMovies"/>
-    <AppListMovie :list-movie="listMovie"/>
+    <AppSearchBar @getMovies="getMovies" @getSeries="getSeries"/>
+    <AppListMovie :list-movie="listMovie" :list-Series="listSeries"/>
   </div>
 </template>
 <script>
@@ -16,8 +16,10 @@ export default {
   data() {
     return {
       store,
-      apiUrl:'https://api.themoviedb.org/3/search/movie',
+      apiUrlMovie:'https://api.themoviedb.org/3/search/movie',
+      apiUrlSeries:'https://api.themoviedb.org/3/search/tv',
       listMovie:[],
+      listSeries:[]
     }
   },
   name: "AppMain",
@@ -27,7 +29,7 @@ export default {
   },
     methods: {
         getMovies(film){
-            axios.get(this.apiUrl, {
+            axios.get(this.apiUrlMovie, {
                 params: {
                     query: film,
                     api_key: "aa2c63995be04027118ba87fe065cf4e"
@@ -42,9 +44,26 @@ export default {
             console.log(error);
             })
         },
+        getSeries(singleSeries){
+            axios.get(this.apiUrlSeries, {
+                params: {
+                    query: singleSeries,
+                    api_key: "aa2c63995be04027118ba87fe065cf4e"
+                }
+            })
+            .then( (response) => {
+            this.listMovie = response.data.results;
+            console.log(this.listSeries);
+
+            })
+            .catch(function (error) {
+            console.log(error);
+            })
+        },
     },
     created() {
-          this.getMovies()
+          this.getMovies(),
+          this.getSeries()
         },    
 }
 </script>

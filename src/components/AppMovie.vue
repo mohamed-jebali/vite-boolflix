@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="movie-container">
         <h3>
             {{ titleMovie }}
         </h3>

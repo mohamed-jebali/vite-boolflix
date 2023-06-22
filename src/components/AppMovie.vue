@@ -6,7 +6,7 @@
         <h4>
             {{ titleOriginal }}
         </h4>
-        <p>
+        <p v-if="language === 'en' ? 'addFlags()' : ''">
             {{ language }}
         </p>
         <p>
@@ -23,7 +23,14 @@ export default {
         titleOriginal : String,
         language : String,
         rank : Number,
-    }
+    },
+    methods: {
+        addFlags(){
+            if(language === "en" ){
+                language = `<img src="../../public/flags/gb.svg" alt="gb">`
+            }
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>

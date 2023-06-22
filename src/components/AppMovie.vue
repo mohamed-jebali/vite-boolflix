@@ -16,6 +16,23 @@
             {{ rank.toFixed(1) }}
         </p>
     </div>
+    <div class="tv-container">
+        <h3>
+            {{ titleSeries }}
+        </h3>
+        <h4>
+            {{ titleOriginalSeries }}
+        </h4>
+        <div v-if="flagsImgList.includes(languageSeries + '.svg')">
+            <img :src="getImageLanguage(languageSeries)" alt="country flag">
+        </div>
+            <div v-else>
+                {{ languageSeries }}
+        </div>
+        <p>
+            {{ rankSeries.toFixed(1) }}
+        </p>
+    </div>
 </template>
 <script>
 export default {
@@ -25,6 +42,10 @@ export default {
         titleOriginal: String,
         language: String,
         rank: Number,
+        titleSeries: String,
+        titleOriginalSeries: String,
+        languageSeries: String,
+        rankSeries: Number,
     },
     data() {
         return {

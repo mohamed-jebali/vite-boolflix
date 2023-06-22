@@ -6,6 +6,12 @@
        :language="itemMovie.original_language"
        :rank="itemMovie.vote_average"
        />
+       <AppMovie v-for="itemSeries in listSeries"
+       :titleSeries="itemSeries.name"
+       :titleOriginalSeries="itemSeries.original_name"
+       :languageSeries="itemSeries.original_language"
+       :rankSeries="itemSeries.vote_average"
+       />
     </div>
 </template>
 <script>
@@ -21,6 +27,7 @@ export default {
     name: 'AppListMovie',
     props : {
         listMovie : Array,
+        listSeries : Array,
     },
 }
 </script>

@@ -6,8 +6,8 @@
         <h4>
             {{ titleOriginal }}
         </h4>
-        <div v-if="flagsImgList.includes(language + '.svg')">
-                <img :src="getImageLanguage(language + '.svg')" alt="country flag">
+        <div v-if="flagsImgList.includes(language)">
+            <img :src="getImageLanguage(language)" alt="country flag">
         </div>
             <div v-else>
                 {{ language }}
@@ -32,17 +32,17 @@ export default {
                 "de.svg",
                 "es.svg",
                 "fr.svg",
-                "gb.svg",
+                "en.svg",
                 "it.svg",
-                "jp.svg",
-                "um.svg"
+                "ja.svg",
+                "um.svg",
             ]
         }
     },
     methods: {
-        getImageLanguage: function (img) {
-            return new URL(`../assets/${img}`, import.meta.url).href;
-        },  
+        getImageLanguage(img){
+             return new URL('../assets/'+img+'.svg', import.meta.url);
+    },
     },
 }
 </script>

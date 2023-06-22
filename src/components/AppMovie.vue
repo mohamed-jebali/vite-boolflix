@@ -13,7 +13,7 @@
                 {{ language }}
         </div>
         <p>
-            {{ rank.toFixed(1) }}
+            {{ rank }}
         </p>
     </div>
     <div class="tv-container">
@@ -30,7 +30,7 @@
                 {{ languageSeries }}
         </div>
         <p>
-            {{ rankSeries.toFixed(1) }}
+            {{ rankSeries }}
         </p>
     </div>
 </template>
@@ -42,6 +42,7 @@ export default {
         titleOriginal: String,
         language: String,
         rank: Number,
+        // ------------------
         titleSeries: String,
         titleOriginalSeries: String,
         languageSeries: String,

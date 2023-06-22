@@ -3,7 +3,7 @@
     <h3>
       Main
     </h3>
-    <AppSearchBar @getAll="getAll" />
+    <AppSearchBar @buttonClicked="getAll"/>
     <AppListMovie :list-movie="listMovie" :list-Series="listSeries" />
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
       apiUrlMovie: 'https://api.themoviedb.org/3/search/movie',
       apiUrlSeries: 'https://api.themoviedb.org/3/search/tv',
       listMovie: [],
-      listSeries: []
+      listSeries: [],
     };
   },
   name: "AppMain",
@@ -30,9 +30,9 @@ export default {
     AppListMovie,
   },
   methods: {
-    getAll() {
-      this.getMovies(this.film);
-      this.getSeries(this.singleSeries);
+    getAll(searchedText) {
+      this.getMovies(searchedText);
+      this.getSeries(searchedText);
     },
     getMovies(film) {
       axios

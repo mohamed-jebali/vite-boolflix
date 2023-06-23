@@ -13,10 +13,10 @@
                 {{ language }}
         </div>
         <p>
-            {{ rank }}
+            Voto: {{ getRank(rank) }}
         </p>
         <div class="image-movie-wrapper">
-            <img  :src="`http://image.tmdb.org/t/p/w500/${imageMovie}`" alt="`${titleMovie}`">
+            <img  :src="`http://image.tmdb.org/t/p/w500/${imageMovie}`" :alt="titleMovie">
         </div>
     </div>
     <div class="tv-container">
@@ -33,10 +33,10 @@
                 {{ languageSeries }}
         </div>
         <p>
-            {{ rankSeries }}
+            Voto: {{ getRank(rank) }}
         </p>
         <div class="image-series-wrapper">
-            <img :src="`http://image.tmdb.org/t/p/w500/${imageSeries}`" alt="`${titleSeries}`">
+            <img :src="`http://image.tmdb.org/t/p/w500/${imageSeries}`" :alt="titleSeries">
         </div>
     </div>
 </template>
@@ -73,6 +73,12 @@ export default {
         getImageLanguage(img){
              return new URL('../assets/'+img+'.svg', import.meta.url);
     },
+    methods: {
+         getRank(rank) {
+              const starsRounded = Math.ceil(rank / 2);
+         },
+    },
+
     },
 }
 </script>

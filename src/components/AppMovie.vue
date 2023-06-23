@@ -1,14 +1,17 @@
 <template>
-    <div class="movie-container">
-      <h3>{{ titleMovie }}</h3>
-      <h4>{{ titleOriginal }}</h4>
-      <div v-if="flagsImgList.includes(language + '.svg')">
+  <div class="movie-container">
+  <div class="card" style="width: 18rem;">
+            <img class="card-img-top" :src="`http://image.tmdb.org/t/p/w500/${imageMovie}`" alt="titleMovie">
+  <div class="card-body">
+    <h5 class="card-title">{{ titleMovie }}</h5>
+    <p class="card-text">{{ titleOriginal }}</p>
+    <div v-if="flagsImgList.includes(language + '.svg')">
         <img class="flags-language" :src="getImageLanguage(language)" alt="language">
       </div>
       <div v-else>
         {{ language }}
       </div>
-      <p>
+       <p>
         Voto:
         <span class="star" v-for="star in Math.ceil(rank / 2)">
           <i class="fas fa-star"></i>
@@ -17,31 +20,35 @@
           <i class="far fa-star"></i>
         </span>
       </p>
+  </div>
+</div>
       <div class="image-movie-wrapper">
         <img :src="`http://image.tmdb.org/t/p/w500/${imageMovie}`" alt="titleMovie">
       </div>
     </div>
     <div class="tv-container">
-      <h3>{{ titleSeries }}</h3>
-      <h4>{{ titleOriginalSeries }}</h4>
-      <div v-if="flagsImgList.includes(languageSeries + '.svg')">
-        <img class="flags-language" :src="getImageLanguage(languageSeries)" alt="languageSeries">
+  <div class="card" style="width: 18rem;">
+            <img class="card-img-top" :src="`http://image.tmdb.org/t/p/w500/${imageSeries}`" alt="titleMovie">
+  <div class="card-body">
+    <h5 class="card-title">{{ titleSeries }}</h5>
+    <p class="card-text">{{ titleOriginalSeries }}</p>
+    <div v-if="flagsImgList.includes(languageSeries + '.svg')">
+        <img class="flags-language" :src="getImageLanguage(languageSeries)" alt="language">
       </div>
       <div v-else>
-        {{ languageSeries }}
+        {{ language }}
       </div>
-      <p>
+       <p>
         Voto:
-        <span class="star" v-for="star in Math.ceil(rankSeries / 2)">
+        <span class="star" v-for="star in Math.ceil(rank / 2)">
           <i class="fas fa-star"></i>
         </span>
-        <span class="empty-star" v-for="emptyStar in 5 - Math.ceil(rankSeries / 2)">
+        <span class="empty-star" v-for="emptyStar in 5 - Math.ceil(rank / 2)">
           <i class="far fa-star"></i>
         </span>
       </p>
-      <div class="image-series-wrapper">
-        <img :src="`http://image.tmdb.org/t/p/w500/${imageSeries}`" alt="titleSeries">
-      </div>
+  </div>
+</div>
     </div>
   </template>
   

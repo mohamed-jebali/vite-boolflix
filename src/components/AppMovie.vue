@@ -1,7 +1,7 @@
 <template>
-  <div class="movie-container">
+  <div class="movie-container mt-3 d-flex">
   <div class="card" style="width: 18rem;">
-            <img class="card-img-top" :src="`http://image.tmdb.org/t/p/w500/${imageMovie}`" alt="titleMovie">
+        <img class="card-img-top" :src="`http://image.tmdb.org/t/p/w500/${imageMovie}`" alt="titleMovie">
   <div class="card-body">
     <h5 class="card-title">{{ titleMovie }}</h5>
     <p class="card-text">{{ titleOriginal }}</p>
@@ -22,11 +22,8 @@
       </p>
   </div>
 </div>
-      <div class="image-movie-wrapper">
-        <img :src="`http://image.tmdb.org/t/p/w500/${imageMovie}`" alt="titleMovie">
-      </div>
     </div>
-    <div class="tv-container">
+    <div class="tv-container mt-3">
   <div class="card" style="width: 18rem;">
             <img class="card-img-top" :src="`http://image.tmdb.org/t/p/w500/${imageSeries}`" alt="titleMovie">
   <div class="card-body">

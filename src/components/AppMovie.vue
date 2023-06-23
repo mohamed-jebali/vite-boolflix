@@ -7,7 +7,7 @@
             {{ titleOriginal }}
         </h4>
         <div v-if="flagsImgList.includes(language + '.svg')">
-            <img :src="getImageLanguage(language)" alt="country flag">
+            <img class="flags-language" :src="getImageLanguage(language)" alt="country flag">
         </div>
             <div v-else>
                 {{ language }}
@@ -15,6 +15,9 @@
         <p>
             {{ rank }}
         </p>
+        <div class="image-movie-wrapper">
+            <img  :src="`http://image.tmdb.org/t/p/w500/${imageMovie}`" alt="`${titleMovie}`">
+        </div>
     </div>
     <div class="tv-container">
         <h3>
@@ -24,7 +27,7 @@
             {{ titleOriginalSeries }}
         </h4>
         <div v-if="flagsImgList.includes(languageSeries + '.svg')">
-            <img :src="getImageLanguage(languageSeries)" alt="country flag">
+            <img class="flags-language" :src="getImageLanguage(languageSeries)" alt="country flag">
         </div>
             <div v-else>
                 {{ languageSeries }}
@@ -32,6 +35,9 @@
         <p>
             {{ rankSeries }}
         </p>
+        <div class="image-series-wrapper">
+            <img :src="`http://image.tmdb.org/t/p/w500/${imageSeries}`" alt="`${titleSeries}`">
+        </div>
     </div>
 </template>
 <script>
@@ -42,11 +48,13 @@ export default {
         titleOriginal: String,
         language: String,
         rank: Number,
+        imageMovie: String,
         // ------------------
         titleSeries: String,
         titleOriginalSeries: String,
         languageSeries: String,
         rankSeries: Number,
+        imageSeries: String
     },
     data() {
         return {
@@ -58,7 +66,7 @@ export default {
                 "it.svg",
                 "ja.svg",
                 "um.svg",
-            ]
+            ],
         }
     },
     methods: {
@@ -69,7 +77,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-img{
+.flags-language{
     height: 30px;
 }
 </style>

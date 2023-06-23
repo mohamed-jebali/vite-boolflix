@@ -25,5 +25,8 @@ export default{
 
 <style lang="scss">
 @import "./bootstrap/scss/bootstrap";
-
+body{
+  background-color: #1b1b1b;
+  color: white;
+}
 </style>
